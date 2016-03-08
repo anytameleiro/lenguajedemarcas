@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-1.11.3.js"></script>
+      <link rel="stylesheet" type="text/css" href="act1.css">
+    <titulo></titulo>
+
+  </head>
+  <body>
+      <div id=borde>
+        <div id=principal>
+          <div id="primero">
+              <img src="http://www.venelogia.com/uploads/2012/enumerar.gif">
+              <p>Un párrafo, también llamado parágrafo (del griego παράγραφος [parágraphos], y este de παρα, «próximo, semejante», y γραφος, «escritura»), es una unidad comunicativa formada por un conjunto de oraciones secuenciales que trata un mismo tema. Está compuesto por un conjunto de oraciones que tienen cierta unidad temática o que, sin tenerla, se enuncian juntas. Es un componente del texto que en su aspecto externo comienza con una mayúscula y termina en un punto y aparte. Comprende varias oraciones relacionadas sobre el mismo subtema; una de ellas expresa la idea principal.</p>
+          </div>
+          <div id="segundo"> 
+              <button id="segundoa"> << </button>
+              <button id="segundob"> >> </button>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        //This part is executed only when all the document is loaded
+        $(function() {
+            console.log("Ready for jQuery");
+            
+            $("#segundob").hide();
+            
+            $( "#segundoa" ).click(function() {
+                $( "#primero" ).hide(500);
+                $(this).hide();
+                $("#segundob").show();
+            });
+          
+            
+            
+            $( "#segundob" ).click(function() {
+                $( "#primero" ).show(500);
+                $(this).hide();
+                $("#segundoa").show();
+            });
+        });
+      </script>
+  </body>
+</html>

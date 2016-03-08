@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-1.11.3.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery1.css">
+    <title></title>
+</head>
+
+<body>
+    <h1>Tablas</h1>
+    <table id="tabla1">
+        <tr>
+            <th>lunes</th>
+            <th>martes</th>
+            <th>miercoles</th>
+            <th>jueves</th>
+            <th>viernes</th>
+        </tr>
+        <tr>
+            <td>GBD</td>
+            <td>LM</td>
+            <td>ISINF</td>
+            <td>LM</td>
+            <td>ISINF</td>
+        </tr>
+        <tr>
+            <td>GBD</td>
+            <td>LM</td>
+            <td>ISINF</td>
+            <td>LM</td>
+            <td>ISINF</td>
+        </tr>
+        <tr>
+            <td>GBD</td>
+            <td>FOL</td>
+            <td>ISINF</td>
+            <td>FOL</td>
+            <td>FHAW</td>
+        </tr>
+        <tr>
+            <td>PLDR</td>
+            <td>ISINF</td>
+            <td>GBD</td>
+            <td>PLDR</td>
+            <td>FHAW</td>
+        </tr>
+        <tr>
+            <td>PLDR</td>
+            <td>ISINF</td>
+            <td>GBD</td>
+            <td>PLDR</td>
+            <td>FHAW</td>
+        </tr>
+        <tr>
+            <td>PLDR</td>
+            <td>ISINF</td>
+            <td>GBD</td>
+            <td>PLDR</td>
+            <td>FOL</td>
+        </tr>
+   </table> 
+    <table>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+        <tr>
+        <td>estudiante</td>
+        <td>edad</td>
+        <td>estudios</td>
+        </tr>
+    </table>
+    
+   <p> Cuando éramos niños 
+los viejos tenían como treinta 
+un charco era un océano 
+la muerte lisa y llana 
+no existía. </p>
+
+<p>Luego cuando muchachos 
+los viejos eran gente de cuarenta 
+un estanque un océano 
+la muerte solamente 
+una palabra. </p>
+
+<p class="show">Ya cuando nos casamos 
+los ancianos estaban en cincuenta 
+un lago era un océano 
+la muerte era la muerte 
+de los otros.</p> 
+
+<p>Ahora veteranos 
+ya le dimos alcance a la verdad 
+el océano es por fin el océano 
+pero la muerte empieza a ser 
+la nuestra.</p>
+    <script type="text/javascript">
+    
+    
+    $(function(){
+        console.log("Ready for jQuery");
+         $("h1").addClass("clase1");
+    $("#tabla1 tr:first").css({"background-color":"red",
+                             "color":"white"
+                             });
+    $("table:last tr:odd").addClass("filas"); 
+        $("p").hide();
+    $("p.show").show();
+    
+    });
+   
+    
+        
+    </script>
+</body>
+</html>
