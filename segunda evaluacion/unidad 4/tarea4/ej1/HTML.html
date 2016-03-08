@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-1.11.3.js"></script>
+      <link rel="stylesheet" type="text/css" href="css.css">
+    <titulo></titulo>
+
+  </head>
+  <body>
+    <div id="primero">  
+        
+        <h1>Camisetas personalizadas</h1>
+        
+      <div id="segundo">
+      <button id="izq"> << </button>
+      
+      <ul id="imagenes">
+			
+            
+			<li><img id="imagen1" src="imagenes/camiseta-padre-jubilacion.jpg" /></li>
+
+            
+	  </ul>
+        <button id="derech"> >> </button>
+        </div>
+    </div>  
+      <script type="text/javascript">
+        //This part is executed only when all the document is loaded
+        $(function() {
+            console.log("Ready for jQuery");
+            
+            vc=0;
+            vf=["imagenes/camiseta-padre-jubilacion.jpg","imagenes/camisetas-graciosas-y-personalizadas-nadie-es-perfecto-yo-soy-nadie.jpg","imagenes/camisetas-personalizadas-divertidas-con-frases-casuales-757201-MLM20294135250_052015-O.jpg","imagenes/CONTIGO%20NO%20BICHO%20CAMISETA%20NEGRA%20DELANTERO.jpg","imagenes/la-belleza-esta-en-el-interior-camisetas-divertidas.jpg","imagenes/manga%20larga%20perso.jpg","imagenes/minion.jpg","imagenes/no_soy_calvo_tengo_una_mente_brillante--i-1356237546210135623015.jpg"];
+            
+            
+            $("#derech").click(function(){
+                vc=vc+1
+                if (vc==8){vc=0};
+               $("#imagen1").attr("src",vf[vc]);
+                
+            });
+            $("#izq").click(function(){
+                vc=vc-1
+                if (vc<0){vc=7};
+                $("#imagen1").attr("src",vf[vc])
+                
+            });
+        });   
+      </script>
+  </body>
+</html>

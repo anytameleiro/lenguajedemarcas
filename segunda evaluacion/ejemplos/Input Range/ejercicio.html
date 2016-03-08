@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="Spanish">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div id="divimagen">
+        <img id="imagen" src="imagen.jpg">
+    </div>
+    <div id="inputtamano">
+     <form>
+        <input type="range" name="tamaño" id="tamaño" min="0" max="500" value="500">
+    </form>
+    </div>
+    <div id="inputorientacion">
+     <form>
+        <input type="range" name="orientacion" id="orientacion" min="-360" max="360" value="0">
+    </form>
+    </div>
+    <div id="colores">
+    </div>
+    <div id="barrascolor">
+    <form>
+        <input type="range" name="colorgreen" id="green" min="0" max="255" value="0">
+    </form>
+        <form>
+        <input type="range" name="colorred" id="red" min="0" max="255" value="0">
+    </form>
+        <form>
+        <input type="range" name="colorblue" id="blue" min="0" max="255" value="0">
+    </form>
+    </div>
+    <script>
+     $(function() {
+            console.log("Ready for jQuery");
+         var tam = 0;
+         var ori = 0;
+         var blue = 0;
+         var red = 0;
+         var green = 0;
+         $("#tamaño").click(function(){
+             tam = $("#tamaño").val();
+             console.log(tam);
+             $("#imagen").animate({
+                 width: tam,
+                 height: tam,
+             },1000);
+         });
+         $("#orientacion").click(function(){
+             ori = $("#orientacion").val();
+             console.log(ori);
+             $("#imagen").css("transform", "rotate("+ori+"deg)");
+         });
+        $("#green").click(function(){
+            green = $("#green").val();
+            $("#colores").css("background-color","rgb("+red+","+green+","+blue+")");
+        });
+        $("#red").click(function(){
+            red = $("#red").val();
+            $("#colores").css("background-color","rgb("+red+","+green+","+blue+")");
+        });
+        $("#blue").click(function(){
+            blue = $("#blue").val();
+            $("#colores").css("background-color","rgb("+red+","+green+","+blue+")");
+        });
+     });
+    </script>
+</body>
+</html>

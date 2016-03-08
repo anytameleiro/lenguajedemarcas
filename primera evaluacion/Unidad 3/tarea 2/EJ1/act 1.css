@@ -1,0 +1,11 @@
+body {font-family:"raleway",arial,sans-serif}
+div#primero {color:royalblue}
+em{background-color: #FFFFCC}
+em.especial{
+    background-color: #FFCC99; 
+    border: 1px solid #FF9900;
+}
+span{ font-weight: 900;}
+
+a:link     {color:red}
+

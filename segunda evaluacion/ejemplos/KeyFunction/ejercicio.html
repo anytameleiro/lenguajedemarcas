@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="Spanish">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="ejercicio.css">
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div id="marco">
+        <div id="objeto">
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+            console.log("Ready for jQuery");
+        $("body").keydown(function( event ) {
+            if ( event.which == 38 ) {
+                if ($("#objeto").css("top") == "0px"){
+                    alert("límite de recorrido");
+                    $("#objeto").animate({
+                        top: "250",
+                        left: "250"
+                },500);
+                }
+                else{
+                $("#objeto").animate({
+                    top:"-=50"
+                },500);
+                }
+            }
+            else if ( event.which == 40 ) {
+                if ( $("#objeto").css("top") == "500px"){
+                    alert("límite de recorrido");
+                    $("#objeto").animate({
+                        top: "250",
+                        left: "250"
+                    },500);
+                }
+                    else{
+                    $("#objeto").animate({
+                    top:"+=50"
+                    },500);
+                    }
+            }
+            
+            else if ( event.which == 37 ) {
+                if ($("#objeto").css("left") == "0px"){
+                    alert("límite de recorrido");
+                    $("#objeto").animate({
+                        top: "250",
+                        left: "250"
+                },500);
+                }
+                else{
+                $("#objeto").animate({
+                    left:"-=50"
+                },500);
+            }
+            }
+            if ( event.which == 39 ) {
+                if ( $("#objeto").css("left") == "500px"){
+                    alert("límite de recorrido");
+                    $("#objeto").animate({
+                    top: "250",
+                    left: "250"
+                },500);
+                }
+            else{
+                $("#objeto").animate({
+                    left:"+=50"
+                },500);
+            }
+            }
+            
+        });
+        
+    });
+    </script>
+</body>
+</html>
