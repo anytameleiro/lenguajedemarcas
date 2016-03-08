@@ -1,5 +1,0 @@
-Ejercicio 2:
-
-En la versión inglesa, ¿por qué los últimos 5 párrafos se muestran de forma diferente que los 2 primeros?
-Por que en los primeros párafos tiene una clase que se llama verse y cada vez que ponga class="verse" debe de ser granate y tener un parrafo con un margen a la izquierda de 60 pixeles.
-a.- Edita el fichero poema.html para que los últimos 5 párrafos tengan el mismo aspecto que los 2 primeros.
