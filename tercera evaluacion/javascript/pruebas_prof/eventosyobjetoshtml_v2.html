@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Página con JavaScript</title>
+    <script type="text/javascript">
+      function comprobarformulario() {
+	var retorno=true;
+	if (document.form1.pass.value != document.form1.reppass.value) {
+		document.form1.pass.value="";
+		document.form1.reppass.value="";
+		alert("las passwords deben coincidir");
+		retorno=false;
+	}
+	else {
+		window.alert('todo correcto');
+	}
+	return retorno;
+      }
+   </script>
+</head>
+<body>
+<p>Esta página contiene un script</p>
+<p>
+  <form name="form1" action=destino.php method="post" id="form1">
+   Usuario:
+   <input type="text" id="nombre" name="nombre" id="nombre" value="" />
+   <br/>
+   Password:
+   <input name="pass" type="text" id="pass"  id="pass" value="" />
+   <br/>
+   Repita Password:
+   <input name="reppass" type="text" id="reppass" id="reppass" value="" />
+   <br/>
+   <input onclick="return comprobarformulario()" type="submit" value="Enviar" />
+  </form>
+</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Página con JavaScript</title>
+</head>
+<body>
+<p>Esta página contiene el primer script</p>
+<p id="demo">
+<script type="text/javascript">
+var fecha = new Date();
+var hora = fecha.getHours();
+var msg = "";
+if ((hora <= 21) && (hora>=6)) {
+	msg="Buenos días";
+}
+else {
+	msg="Buenas noches";
+}
+
+document.getElementById("demo").innerHTML = msg;
+</script>
+</p>
+</body>
+</html>

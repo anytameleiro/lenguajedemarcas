@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Página con JavaScript</title>
+</head>
+<body>
+<p>Esta página contiene un script</p>
+<p id="demo">
+<script type="text/javascript">
+function pasaametros(cantcm){
+	var cantm;
+	cantm=cantcm/100;
+	return cantm;
+}
+var cantidadcm=56789;
+var cantidadm=pasaametros(cantidadcm);
+document.getElementById("demo").innerHTML = cantidadcm+" centímetros son "+cantidadm+ " metros";
+</script>
+</p>
+</body>
+</html>

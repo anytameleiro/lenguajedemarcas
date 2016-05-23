@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <script type="text/javascript">
+      function comparar() {
+        var cadena1= document.getElementById("Texto1").value.split("");
+        var cadena2= document.getElementById("Texto2").value.split("");
+        var a=cadena1.length;
+        var b=cadena2.length;
+        var i = 0;
+        var palabra=" ";
+
+        if ( a <= b ){
+          for (i = 0 ; i < a ; i++){
+            if( cadena1[i]==cadena2[i] ){
+              alert("'"+cadena1[i]+"'"+"  EN LA POSICIÓN  "+i);
+              palabra+=cadena1[i];
+            }
+          }
+          alert(palabra);
+        }
+
+
+        else if ( a >= b ){
+          for (i = 0 ; i < b ; i++){
+            if( cadena1[i]==cadena2[i] ){
+              alert("("+cadena2[i]+")"+"  EN LA POSICIÓN  "+i);
+              palabra+=cadena1[i];
+            }
+          }
+          alert(palabra);
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <input type="text" name="" id="Texto1"><br></br>
+    <input type="text" name="" id="Texto2"><br></br>
+    <input type="button" name="name" value="click" onclick="comparar()">
+  </body>
+</html>

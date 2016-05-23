@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Página con JavaScript</title>
+</head>
+<body>
+<p>Esta página contiene un script</p>
+<p id="demo">
+<script type="text/javascript">
+eliminar="Ford";
+insertar="Volkswagen";
+var coches = ["Volvo", "Audi", "Ford", "Toyota", "Peugeot", "Mazda"];
+var i;
+for (i=0; i<coches.length; i++){
+  if(coches[i] == eliminar) {
+	coches.splice(i,1);
+  }
+}
+coches.push(insertar);
+document.getElementById("demo").innerHTML=coches.toString();
+</script>
+</p>
+</body>
+</html>

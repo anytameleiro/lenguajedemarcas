@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<style>
+    #puntuacion{
+        width: 500px;
+        height: 50px;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <div id="container">
+            <h1 id="gamename">GAME</h1>
+            <div id="puntuacion"></div>
+            <canvas id="myCanvas" width="800" height="400" style="border:1px solid #000000;"></canvas>
+    </div>
+    <script>
+        $(function() {
+            var x=380;
+            var y=180;
+            var puntuacion = 0;
+            var c = $("#myCanvas").get(0);
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#FF0000"; 
+            ctx.fillRect(x,y,40,40);
+            ctx.stroke();
+                        
+            function cuadrado(){
+                ctx.clearRect(x,y,40,40);
+                ctx.stroke();
+                x=Math.round(Math.random()*760);
+                y=Math.round(Math.random()*360);
+                ctx.fillRect(x,y,40,40);
+                ctx.stroke();
+                
+            };
+            
+            var i=1500;
+            var uno=setInterval (cuadrado, i);
+            
+            $( "#myCanvas" ).click(function(event) {
+                var e = $("#myCanvas").offset();
+                var clickX = event.pageX-e.left;
+                var clickY = event.pageY-e.top;
+                if ((clickX>x) && (clickX<x+40) && (clickY>y) && (clickY<y+40)){
+                    puntuacion = puntuacion + 1;
+                    document.getElementById("puntuacion").innerHTML = "Puntuación: "+puntuacion;
+                    
+                    if (puntuacion%10==0) {
+                            clearInterval(uno);
+                            i=i-200;
+                            uno=setInterval (cuadrado, i);
+                    }
+
+                }
+            });
+            
+        });
+        
+    </script>
+</body>
+</html>

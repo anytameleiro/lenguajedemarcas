@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-1.11.3.js"></script>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+      <link rel="stylesheet" type="text/css" href="droppable.css">
+      <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.css">
+    <titulo></titulo>
+
+  </head>
+  <body>
+      <div id="principal">
+            <ul class="uno" id="uno">
+                <li class="draggable">
+                    <img src="dos-manzanas-comida-frutas-pintado-por-vianney-9759802.jpg">
+                    <strong>Manzana</strong>
+                    <p>(1kg -- 2€)</p>
+                </li>
+                <li class="draggable">
+                    <img src="d79272495bf7784d1b8867e06b69c7a0.png">
+                    <strong>Cereza</strong>
+                    <p>(1kg -- 3€)</p>
+                </li>
+                <li class="draggable">
+                    <img src="pera.png">
+                    <strong>Pera</strong>
+                    <p>(1kg -- 2€)</p>
+                </li>
+                <li class="draggable">
+                    <img src="limon-ii-comida-frutas-pintado-por-cangri-9816466.jpg">
+                    <strong>Limon</strong>
+                    <p>(1kg -- 1€)</p>
+                </li>
+            </ul>
+            
+            <div class="uno">
+                <div class="dos">
+                     <div class="droppable" id="droppable1">
+                        <div id="nombre_elemento1"></div>
+                    </div>
+                    <img src="dos-manzanas-comida-frutas-pintado-por-vianney-9759802.jpg">
+                </div>
+                <div class="dos">
+                    <div class="droppable" id="droppable2">
+                        <div id="nombre_elemento2"></div>
+                    </div>
+                    <img src="d79272495bf7784d1b8867e06b69c7a0.png">
+                </div>
+                <div class="dos">
+                    <div class="droppable" id="droppable3">
+                        <div id="nombre_elemento3"></div>
+                    </div>
+                    <img src="pera.png">
+                </div>
+                <div class="dos">
+                    
+                    <div class="droppable" id="droppable4">
+                        <div id="nombre_elemento4"></div>
+                    </div>
+                    <img src="limon-ii-comida-frutas-pintado-por-cangri-9816466.jpg">
+                </div>
+                
+               
+                                
+            </div>
+          <button id="precio">PRECIO TOTAL</button>
+          <span id="valorfinal"></span>
+          
+          
+      </div>
+        
+ 
+
+      <script type="text/javascript">
+        //This part is executed only when all the document is loaded
+        contar = 0
+        contara = 0
+        contarb = 0
+        contarc = 0
+        ;
+          
+          
+          $(function() {
+            console.log("Ready for jQuery");
+             
+            $( ".draggable" ).draggable({
+              appendTo: "body",
+              helper: "clone"
+            });
+            $( "#droppable1" ).droppable({
+              drop: function(event, ui) {
+                    contar=contar+1;
+                    agregar = $(ui.draggable).text();
+                    $("#nombre_elemento1").html("Hay " +contar+ "<b>"+agregar+"</b>");
+                 }
+            });
+            $( "#droppable2" ).droppable({
+              drop: function(event, ui) {
+                    contara=contara+1;
+                    agregar = $(ui.draggable).text();
+                    $("#nombre_elemento2").html("Hay " +contara+ "<b>"+agregar+"</b>");
+                 }
+            });
+            $( "#droppable3" ).droppable({
+              drop: function(event, ui) {
+                    contarb=contarb+1;
+                    agregar = $(ui.draggable).text();
+                    $("#nombre_elemento3").html("Hay " +contarb+ "<b>"+agregar+"</b>");
+                 }
+            });
+            $( "#droppable4" ).droppable({
+              drop: function(event, ui) {
+                    contarc=contarc+1;
+                    agregar = $(ui.draggable).text();
+                    $("#nombre_elemento4").html("Hay " +contarc+ "<b>"+agregar+"</b>");
+                 }
+            });
+            $("#precio").click(function() {
+                      var a=2;
+                      var b=3;
+                      var c=2;
+                      var d=1;
+                      var resultado;
+                
+                    resultado= contar*a+contara*b+contarb*c+contarc*d +"€";              
+                    $("#valorfinal").text(resultado);
+            });
+                       
+        });
+      </script>
+  </body>
+</html>

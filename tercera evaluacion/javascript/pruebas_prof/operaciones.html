@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Página con JavaScript</title>
+</head>
+<body>
+<p>Esta página contiene otro script</p>
+<p id="demo">
+<script type="text/javascript">
+var num;
+num=5+1;
+num++;
+var num2;
+num2=7;
+num2+=num;
+var nombre;
+nombre = "Pe"+"dro"; 
+document.getElementById("demo").innerHTML = "num2 vale "+num2+" y el nombre es "+nombre+"<br> es num2 igual a 5: "+(num2==5)+"<br> es num2 mayor o igual a 5: "+((num2 > 5)||(num2 == 5));
+</script>
+</p>
+</body>
+</html>

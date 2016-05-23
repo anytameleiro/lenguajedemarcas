@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+    <center>
+    <div id="principal">
+        <div id='oculto' style='display:none;'>
+            <img src="img/Loser.jpg" id="loser" >
+            <img src="img/Loser-leads.gif" id="los" >
+            
+        </div>
+        <div id='ocultos' style='display:none;'>
+            <img src="img/vistory.gif" id="loser" >
+            <img src="img/victoria.jpg" id="los" >
+        </div>
+        <div id="uno">
+            <img id="imagen" src="img/hangman1.bmp">
+            <div id="visor"></div>
+        </div>
+        <div id="palabra"></div>
+        <div id="dos"> 
+            <input type="text" id="tres" maxlength="1" onclick="javascript: limpia(this);">
+            
+            <button id="letra" onclick="procesa()">Procesa</button>
+            
+        </div>
+         
+        <button id="nuevo" onclick="juego()">Juego nuevo</button>
+        <h1 id="h1"></h1>
+        <h4 id="h4"></h4>
+        
+       
+    </div>
+    </center>
+    <script>
+        var palabras= ["manzana","pizza","raton","Lunes", "martes", "miércoles", "jueves", "viernes","domingo","casa","escuela","pera","limon","palabra","gorda","camisa","ingles","ordenador","lampara","esternocleidomastoideo","onomatopella","libro","aburrido","tarta","pesado","pajaro","avion","leon","leer","perro","gato","hoja","ojo","vacaciones","murcielago"];
+        var aleatorio= Math.floor(Math.random()*(palabras.length));
+        var palabra=palabras[aleatorio];
+        var a=0;
+        var b=[];
+        var cadena=palabra.split("");
+        var imagenes = Array ("img/hangman1.bmp","img/hangman2.bmp","img/hangman3.bmp","img/hangman4.bmp","img/hangman5.bmp","img/hangman6.bmp","img/hangman7.bmp");
+        var indice = 0;
+        
+        function limpia(elemento)
+        {
+        elemento.value = "";
+        }
+        for (a=0;a<palabra.length;a++){
+            b.push(" _ ");
+        };
+        document.getElementById("palabra").innerHTML= b.join(" ");
+        
+        function procesa(){
+            var audio = new Audio("perder.mp3");
+            var aud = new Audio("ganador.mp3");
+            var c=0;
+            var letra=document.getElementById("tres").value;
+            
+            
+            for (a=0; a<palabra.length;a++){
+                
+                if(cadena[a]==letra[0]){
+                    b[a]=letra[0];
+                    document.getElementById("palabra").innerHTML= b.join(" ");
+                    
+                }else{ 
+                    c=c+1;
+                }   
+            }
+            
+            if (c==cadena.length){
+                indice++;
+                        if(indice==6)
+                        {
+                            document.getElementById("h1").innerHTML="Perdistes :( ";
+                            document.getElementById("h4").innerHTML="La palabra era: "+palabra;
+                            document.getElementById('oculto').style.display = 'block';
+                            audio.play();
+                            indice=6;
+                            setTimeout('document.location.reload()',6000);
+                            
+
+                        } else if(indice==4){
+                            alert("¡¡Te quedan dos intentos!!");
+
+                        }
+                            document.getElementById("imagen").src=imagenes[indice];
+            }
+            if (c!=cadena.length){
+                
+                if(palabra==b.join("")){
+                    document.getElementById("h1").innerHTML="¡¡¡¡GANASTESSS!!!!";
+                    document.getElementById('ocultos').style.display = 'block';
+                    aud.play();
+                    setTimeout('document.location.reload()',6000);
+                }
+                
+            }
+            
+            document.getElementById("visor").innerHTML+=letra+" ";
+        };
+        function juego(){
+            location.reload(true);
+        };
+    </script>
+</body>
+</html>

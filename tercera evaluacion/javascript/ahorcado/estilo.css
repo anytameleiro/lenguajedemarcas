@@ -1,0 +1,56 @@
+#principal{
+    width: 1200px;
+    margin: 50px auto;
+    overflow-y: auto;
+    
+}
+#uno{
+    width: 710px;
+    overflow: auto;
+}
+#imagen{
+    width: 400px;
+    height: 300px;
+    float: left;
+}
+#visor{
+    width: 300px;
+    height: 250px;
+    float:right;
+    border: solid;
+    border-radius: 10px;
+    font: 50px bold;
+    overflow-y: auto;
+    margin-top: 35px;
+}
+#dos{
+    overflow: auto;
+}
+#palabra{
+    width: 600px;
+    height: 30px;
+    border: 1px solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    font: 25px bold;
+}
+#tres{
+    margin-right: 20px;
+    width: 20px;
+    height: 30px;
+    font: 20px bold;
+    padding-left: 10px;
+}
+#nuevo{
+    margin-top: 20px;
+}
+#loser{
+    float: left;
+    width: 200px;
+    
+}
+#los{
+    float: right;
+    width: 200px;
+}
